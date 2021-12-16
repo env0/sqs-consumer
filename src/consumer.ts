@@ -88,7 +88,7 @@ export interface ConsumerOptions {
   sqs?: SQS;
   region?: string;
   handleMessageTimeout?: number;
-  shouldDeleteMessages?: string;
+  shouldDeleteMessages?: boolean;
   handleMessage?(message: SQSMessage): Promise<void>;
   handleMessageBatch?(messages: SQSMessage[]): Promise<void>;
 }
