@@ -139,7 +139,7 @@ export class Consumer extends EventEmitter {
     this.waitTimeSeconds = options.waitTimeSeconds || 20;
     this.authenticationErrorTimeout = options.authenticationErrorTimeout || 10000;
     this.pollingWaitTimeMs = options.pollingWaitTimeMs || 0;
-    this.shouldDeleteMessages = options.shouldDeleteMessages || true;
+    this.shouldDeleteMessages = options.shouldDeleteMessages ?? true;
 
     this.sqs = options.sqs || new SQS({
       region: options.region || process.env.AWS_REGION || 'eu-west-1'
